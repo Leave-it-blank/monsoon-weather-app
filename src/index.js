@@ -1,13 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+import RootLayout from './layouts/RootLayout';
+import Dashboard , {loader as dashLoader} from './pages/Dashboard';
 import reportWebVitals from './reportWebVitals';
+ 
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
+
+ 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />, 
+    children: [
+      {
+        path: "/",
+        element: <Dashboard />,
+        loader: dashLoader,
+      },
+    ],
+  },
+]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+  <RouterProvider router={router} />
   </React.StrictMode>
 );
 

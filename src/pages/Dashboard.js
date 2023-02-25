@@ -14,7 +14,7 @@ function Dashboard() {
 
   const [metricSystem, setMetricSystem] = useState(
     JSON.parse(localStorage["metricSystem"])
-  );
+  ); // eslint-disable-line
 
   useEffect(() => {
     async function fetchWeather() {

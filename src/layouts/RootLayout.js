@@ -1,14 +1,22 @@
-import NavBar from "../components/NavBar";
 import { Outlet } from "react-router-dom";
- 
+
 function RootLayout() {
+  if (!localStorage["metricSystem"]) {
+    //localStorage.setItem("measure_system", JSON.stringify([...new Set()]));
+    localStorage.setItem(
+      "metricSystem",
+      JSON.stringify({ system: "metric", unit: "C" })
+    );
+  }
   return (
     <>
- 
-      <main className="  bg-neutral-900  text-white  min-h-screen  ">
-        <div className="App pt-10 container max-w-6xl   min-h-screen text-white mx-auto px-2 sm:px-20  ">
-          <NavBar />
-          <Outlet />
+      <main className="  bg-black  text-white  min-h-screen font-mono   ">
+        <div className="  container    text-white mx-auto py-8 md:p-4    ">
+          <div className="    p-6 rounded-md  ">
+            <div className="flex flex-col md:flex-row gap-10 relative">
+              <Outlet />
+            </div>
+          </div>
         </div>
       </main>
     </>

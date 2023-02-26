@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import MobNavBar from "../components/MobNavBar";
 
 function SearchWeather() {
+  // eslint-disable-next-line
   const [metricSystem, setMetricSystem] = useState(
     JSON.parse(localStorage["metricSystem"])
   );

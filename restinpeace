@@ -1,0 +1,24 @@
+ forcastday: [
+        {
+          date: forecast.forecastday[0].date,
+          day: {
+            max_temp:
+              metricSystem.system === "metric"
+                ? { value: forecast.forecastday[0].day.maxtemp_c, unit: "C" }
+                : { value: forecast.forecastday[0].day.maxtemp_f, unit: "F" },
+            min_temp:
+              metricSystem.system === "metric"
+                ? { value: forecast.forecastday[0].day.mintemp_c, unit: "C" }
+                : { value: forecast.forecastday[0].day.mintemp_f, unit: "F" },
+            avg_temp:
+              metricSystem.system === "metric"
+                ? { value: forecast.forecastday[0].day.avgtemp_c, unit: "C" }
+                : { value: forecast.forecastday[0].day.avgtemp_f, unit: "F" },
+
+            condition: {
+              text: forecast.forecastday[0].day.condition.text,
+              icon: forecast.forecastday[0].day.condition.icon,
+            },
+          },
+        },
+      ],

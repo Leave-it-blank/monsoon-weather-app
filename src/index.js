@@ -1,34 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import RootLayout from './layouts/RootLayout';
-import Dashboard , {loader as dashLoader} from './pages/Dashboard';
-import reportWebVitals from './reportWebVitals';
- 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import RootLayout from "./layouts/RootLayout";
+import Dashboard, { loader as dashLoader } from "./pages/Dashboard";
+import reportWebVitals from "./reportWebVitals";
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
- 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout />, 
+    element: <RootLayout />,
     children: [
       {
         path: "/",
         element: <Dashboard />,
         loader: dashLoader,
       },
+      {
+        path: "city/:query",
+        element: <Dashboard />,
+        loader: dashLoader,
+      },
     ],
   },
 ]);
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-  <RouterProvider router={router} />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 

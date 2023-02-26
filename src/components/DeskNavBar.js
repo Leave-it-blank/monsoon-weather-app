@@ -3,7 +3,7 @@ import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import CalendarMonthOutlinedIcon from "@mui/icons-material/CalendarMonthOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-
+import { Link } from "react-router-dom";
 function DeskNavBar({ setMetricSystem }) {
   let measure_system_local = JSON.parse(localStorage["metricSystem"]);
   //console.log(measure_system_local.unit);
@@ -97,7 +97,7 @@ function DeskNavBar({ setMetricSystem }) {
           >
             {" "}
             <CalendarMonthOutlinedIcon fontSize="inherit" />
-          </li>
+          </li>{" "}
           <li
             className=" flex  
           justify-center 
@@ -114,7 +114,10 @@ function DeskNavBar({ setMetricSystem }) {
          "
           >
             {" "}
-            <LocationOnOutlinedIcon fontSize="inherit" />
+            <Link to="/">
+              {" "}
+              <LocationOnOutlinedIcon fontSize="inherit" />
+            </Link>
           </li>
           <li
             className=" flex  

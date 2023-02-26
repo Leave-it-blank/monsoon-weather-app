@@ -248,16 +248,8 @@ function Dashboard() {
     }
     getData();
   }, [location.country, location.name, location.region]);
-  const [showModal, setShowModal] = useState("hidden");
+
   // console.log(weatherCard);
-  const ModalHandler = () => {
-    console.log("show modal");
-    if (showModal === "hidden") {
-      setShowModal("block");
-    } else {
-      setShowModal("hidden");
-    }
-  };
 
   return (
     <>
@@ -267,19 +259,16 @@ function Dashboard() {
         <DeskNavBar setMetricSystem={setMetricSystem} />
       </div>
       {/* Main web Content */}
-      <div className="w-full     rounded-2xl    ">
+      <div className="w-full     rounded-2xl relative   ">
         <div className="grid  grid-flow-row gap-5 mx-auto  select-none">
           <div className="min-h-96 w-full">
             <div className="flex flex-col lg:flex-row gap-4  ">
               <div className="   bg-neutral-800 h-96  w-full lg:w-3/5 rounded-2xl  ">
                 <div className="    h-full w-full rounded-2xl  ">
-                  <WeatherCard
-                    weatherCardData={weatherCard}
-                    showModalHandler={ModalHandler}
-                  />
+                  <WeatherCard weatherCardData={weatherCard} />
                 </div>
               </div>
-              <div className="   bg-neutral-800 h-96  w-full  rounded-2xl  ">
+              <div className="   bg-neutral-800 md:h-96  w-full  rounded-2xl  ">
                 <div className="    h-full w-full rounded-2xl  ">
                   <HighLights highLight={highLight} astro={astro} />
                 </div>
@@ -302,7 +291,7 @@ export default Dashboard;
 
 export async function loader({ params }) {
   let location = params.query;
-  let url = `http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location}&days=15`;
+  let url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location}&days=14`;
   if (location === undefined) {
     function getPosition() {
       // Simple wrapper
@@ -321,7 +310,7 @@ export async function loader({ params }) {
     }
     location = await getPosition();
 
-    url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.coords.latitude},${location.coords.longitude}&days=7`;
+    url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.coords.latitude},${location.coords.longitude}&days=14`;
   }
 
   const res = await fetch(url);

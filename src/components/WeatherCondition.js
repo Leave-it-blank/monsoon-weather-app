@@ -1,6 +1,6 @@
 import { useState } from "react";
 function WeatherCondition({ weatherData }) {
-  console.log(weatherData);
+  //console.log(weatherData);
   const valueCalender = {
     now: "now",
     twelve: "12",
@@ -24,7 +24,7 @@ function WeatherCondition({ weatherData }) {
               value={calendar}
               onChange={handleCalenderChange}
             >
-              <option value={valueCalender.now}>now</option>
+              <option value={valueCalender.now}>Now</option>
               <option value={valueCalender.twelve}>12 hr</option>
               <option value={valueCalender.twentyfour}>24 hr</option>
             </select>

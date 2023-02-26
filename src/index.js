@@ -4,8 +4,10 @@ import "./index.css";
 import RootLayout from "./layouts/RootLayout";
 import Dashboard, { loader as dashLoader } from "./pages/Dashboard";
 import reportWebVitals from "./reportWebVitals";
-import Map from "./pages/Map";
+
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+import SearchWeather from "./pages/SearchWeather";
 
 const router = createBrowserRouter([
   {
@@ -18,13 +20,13 @@ const router = createBrowserRouter([
         loader: dashLoader,
       },
       {
+        path: "/search",
+        element: <SearchWeather />,
+      },
+      {
         path: "city/:query",
         element: <Dashboard />,
         loader: dashLoader,
-      },
-      {
-        path: "/",
-        element: <Map />,
       },
     ],
   },

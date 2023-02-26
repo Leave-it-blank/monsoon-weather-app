@@ -1,30 +1,62 @@
 import moment from "moment";
-import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
+import { useState, useEffect } from "react";
+
 function Forcast({ forecastCard }) {
+  const [days, setDays] = useState("7");
   //console.log(forecastCard.forecast);
+
+  let [forecastData, setForecastData] = useState(
+    forecastCard.forecast.slice(1, 7)
+  );
+
+  useEffect(() => {
+    if (days === "10") {
+      setForecastData(forecastCard.forecast.slice(1, 10));
+    } else if (days === "14") {
+      setForecastData(forecastCard.forecast.slice(1, 14));
+    } else {
+      setForecastData(forecastCard.forecast.slice(1, 7));
+    }
+  }, [days, forecastCard.forecast]);
+  const valueDate = {
+    seven: "7",
+    ten: "10",
+    fourteen: "14",
+  };
+
+  const setDaysHandle = (e) => {
+    setDays(e.target.value);
+  };
+
   return (
     <>
       <div className="   h-96   w-full lg:w-3/5 rounded-2xl  ">
         <div className="h-16 w-full rounded-2xl capitalize flex flex-row justify-between items-center">
           <div className="">forcast</div>
-          <div>
-            {" "}
-            <button className="rounded-3xl bg-opacity-70 bg-neutral-800 tracking-tight text-sm  p-1  flex flex-row justify-center items-center">
-              <p className="pl-2"> 7 Days</p>
-              <span className="text-xl">
-                <ArrowDropDownIcon fontSize="inherit" />
-              </span>
-            </button>
+          <div className="bg-neutral-900  rounded-3xl px-2 py-1">
+            <select
+              className="  bg-neutral-900    outline-none"
+              value={days}
+              onChange={setDaysHandle}
+            >
+              <option value={valueDate.seven}>7 Days</option>
+              <option value={valueDate.ten}>10 Days</option>
+              <option value={valueDate.fourteen}>14 Days</option>
+            </select>
           </div>
         </div>
 
         <div className="   bg-neutral-800  h-80 w-full rounded-2xl  ">
-          <div className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 ">
-            {forecastCard.forecast.map((item, key) => (
-              <div
-                className="flex overflow-hidden justify-around items-center gap-1"
-                key={key}
-              >
+          <div
+            className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 overflow-y-auto   scroll-hidden scroll-bar-none overscroll-none"
+            style={{
+              scrollbarWidth: "none",
+              msOverflowStyle: "none",
+              scrollbarColor: "transparent transparent",
+            }}
+          >
+            {forecastData.map((item, key) => (
+              <div className="flex justify-around items-center gap-1" key={key}>
                 <div className=" w-1/6 px-1 py-2">
                   <img
                     src={item.value.day.condition.icon}

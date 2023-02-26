@@ -8,6 +8,7 @@ import moment from "moment";
 import DeskNavBar from "../components/DeskNavBar";
 function Dashboard() {
   const { location, current, forecast } = useLoaderData();
+  //console.log(location);
 
   const [metricSystem, setMetricSystem] = useState(
     JSON.parse(localStorage["metricSystem"])
@@ -22,6 +23,28 @@ function Dashboard() {
     type: metricSystem.system,
     localtime: location.localtime,
   });
+  const unit = {
+    speed_imperial: "mph",
+    speed_metric: "km%2Fh",
+    temp_imperial: "%C2%B0F",
+    temp_metric: "%C2%B0C",
+  };
+  const [weatherCondition, setWeatherConditon] = useState({
+    speed:
+      metricSystem.system === "metric"
+        ? unit.speed_metric
+        : unit.speed_imperial,
+    temp:
+      metricSystem.system === "metric" ? unit.temp_metric : unit.temp_imperial,
+    lat: location.lat,
+    lon: location.lon,
+    location: {
+      name: location.name,
+      region: location.region,
+      country: location.country,
+    },
+  });
+
   const [forecastCard, setForecastCard] = useState({
     forecast: forecast.forecastday.map((data) => {
       return {
@@ -51,7 +74,7 @@ function Dashboard() {
       };
     }),
   });
-  console.log(forecastCard);
+  //  console.log(forecastCard);
 
   const [highLight, setHighLight] = useState({
     feelslike:
@@ -155,6 +178,24 @@ function Dashboard() {
         };
       }),
     });
+
+    setWeatherConditon({
+      speed:
+        metricSystem.system === "metric"
+          ? unit.speed_metric
+          : unit.speed_imperial,
+      temp:
+        metricSystem.system === "metric"
+          ? unit.temp_metric
+          : unit.temp_imperial,
+      lat: location.lat,
+      lon: location.lon,
+      location: {
+        name: location.name,
+        region: location.region,
+        country: location.country,
+      },
+    });
   }, [
     current.condition.icon,
     current.condition.text,
@@ -176,10 +217,16 @@ function Dashboard() {
     current.wind_mph,
     forecast.forecastday,
     location.country,
+    location.lat,
     location.localtime,
+    location.lon,
     location.name,
     location.region,
     metricSystem,
+    unit.speed_imperial,
+    unit.speed_metric,
+    unit.temp_imperial,
+    unit.temp_metric,
   ]);
   const [astro, setAstro] = useState({
     is_moon_up: 0,
@@ -242,7 +289,7 @@ function Dashboard() {
           <div className="min-h-96 w-full">
             <div className="flex flex-col lg:flex-row gap-4  ">
               <Forcast forecastCard={forecastCard} />
-              <WeatherCondition />
+              <WeatherCondition weatherData={weatherCondition} />
             </div>
           </div>
         </div>

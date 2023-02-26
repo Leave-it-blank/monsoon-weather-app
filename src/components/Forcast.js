@@ -1,7 +1,7 @@
 import moment from "moment";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 function Forcast({ forecastCard }) {
-  console.log(forecastCard.forecast);
+  //console.log(forecastCard.forecast);
   return (
     <>
       <div className="   h-96   w-full lg:w-3/5 rounded-2xl  ">
@@ -19,23 +19,26 @@ function Forcast({ forecastCard }) {
         </div>
 
         <div className="   bg-neutral-800  h-80 w-full rounded-2xl  ">
-          <div className="    h-full w-full rounded-2xl flex flex-col px-2 py-3  ">
-            {forecastCard.forecast.map((item) => (
-              <div className="flex overflow-hidden justify-around items-center gap-1">
-                <div className=" w-1/5 px-1 py-2">
+          <div className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 ">
+            {forecastCard.forecast.map((item, key) => (
+              <div
+                className="flex overflow-hidden justify-around items-center gap-1"
+                key={key}
+              >
+                <div className=" w-1/6 px-1 py-2">
                   <img
                     src={item.value.day.condition.icon}
                     alt=""
-                    className="w-12 h-12"
+                    className="w-10 h-10"
                   />
                 </div>
-                <div className="flex flex-row justify-start items-end w-2/5 px-1 py-2">
-                  <span className="text-xl">
+                <div className="flex flex-row justify-start items-baseline   w-2/5   py-2 mr-1">
+                  <span className="text-md">
                     {" "}
                     {item.value.day.max_temp.value}
                     °/{""}
                   </span>
-                  <span className="text-sm text-neutral-400">
+                  <span className="text-xs text-neutral-400">
                     {""}
                     {item.value.day.min_temp.value}
                     {"° "}
@@ -45,7 +48,7 @@ function Forcast({ forecastCard }) {
                     {item.value.day.min_temp.unit}{" "}
                   </span>
                 </div>
-                <div className="w-1/5  text-xs text-neutral-400 truncate px-1 py-2">
+                <div className="w-1/5  text-xs text-neutral-400 truncate px-1   py-2">
                   {" "}
                   {moment(item.value.date).format("MMM Do")}
                 </div>

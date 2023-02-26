@@ -4,7 +4,7 @@ import "./index.css";
 import RootLayout from "./layouts/RootLayout";
 import Dashboard, { loader as dashLoader } from "./pages/Dashboard";
 import reportWebVitals from "./reportWebVitals";
-
+import Map from "./pages/Map";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -21,6 +21,10 @@ const router = createBrowserRouter([
         path: "city/:query",
         element: <Dashboard />,
         loader: dashLoader,
+      },
+      {
+        path: "/",
+        element: <Map />,
       },
     ],
   },

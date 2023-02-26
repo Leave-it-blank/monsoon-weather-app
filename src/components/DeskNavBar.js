@@ -3,10 +3,12 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { Link } from "react-router-dom";
+
 function DeskNavBar({ setMetricSystem }) {
   let measure_system_local = JSON.parse(localStorage["metricSystem"]);
   //console.log(measure_system_local.unit);
   // This is a state variable
+
   const switchSystem = () => {
     console.log("Switch system clicked");
 

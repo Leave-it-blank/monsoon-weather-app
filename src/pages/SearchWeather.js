@@ -1,6 +1,7 @@
 import DeskNavBar from "../components/DeskNavBar";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import MobNavBar from "../components/MobNavBar";
 
 function SearchWeather() {
   const [metricSystem, setMetricSystem] = useState(
@@ -38,16 +39,22 @@ function SearchWeather() {
         <DeskNavBar setMetricSystem={setMetricSystem} />
       </div>
       {/* Main web Content */}
-      <div className="w-full      rounded-2xl relative   ">
+      <div
+        className="w-full      rounded-2xl relative   "
+        style={{ height: "49.25rem" }}
+      >
+        <div className="lg:hidden">
+          <MobNavBar setMetricSystem={setMetricSystem} />
+        </div>
         <div className=" w-full relative flex justify-center flex-col items-center">
           <div className="mt-20 invisible"></div>
           <input
             type="text"
             placeholder="Search for a city"
-            className="w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-700 text-white outline-none p-2"
+            className="w-full lg:w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-700 text-white outline-none p-2"
             onChange={getSuggestions}
           />
-          <div className="text-neutral-300 py-2  flex flex-col  w-1/2">
+          <div className="text-neutral-300 py-2  flex flex-col  w-full lg:w-1/2 ">
             {suggestions.length > 0 &&
               suggestions.map((suggestion, key) => (
                 <div

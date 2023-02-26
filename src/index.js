@@ -4,7 +4,7 @@ import "./index.css";
 import RootLayout from "./layouts/RootLayout";
 import Dashboard, { loader as dashLoader } from "./pages/Dashboard";
 import reportWebVitals from "./reportWebVitals";
-
+import ErrorPage from "./pages/ErrorPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import SearchWeather from "./pages/SearchWeather";
@@ -18,15 +18,18 @@ const router = createBrowserRouter([
         path: "/",
         element: <Dashboard />,
         loader: dashLoader,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/search",
         element: <SearchWeather />,
+        errorElement: <ErrorPage />,
       },
       {
         path: "city/:query",
         element: <Dashboard />,
         loader: dashLoader,
+        errorElement: <ErrorPage />,
       },
     ],
   },

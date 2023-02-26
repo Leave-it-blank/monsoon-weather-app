@@ -19,8 +19,10 @@ function HighLights({ highLight, astro }) {
                   </div>
                 </div>
                 <div className="flex flex-col py-3   justify-between items-end">
-                  <div className="flex flex-row  items-baseline self-start gap-1">
-                    <p className="text-2xl  ">{highLight.wind_speed.value}</p>
+                  <div className="flex flex-row  items-baseline self-center gap-1">
+                    <p className="text-md lg:text-2xl  ">
+                      {highLight.wind_speed.value}
+                    </p>
                     <p className="text-xs text-neutral-400 ">
                       {"  "}
                       {highLight.wind_speed.unit}
@@ -50,7 +52,7 @@ function HighLights({ highLight, astro }) {
                 </div>
                 <div className="flex flex-col py-3   justify-between items-end">
                   <div className="flex flex-row  items-baseline self-center gap-1">
-                    <p className="text-2xl  ">
+                    <p className="text-md lg:text-2xl  ">
                       {highLight.uv}
                       <small className="text-xs text-neutral-400 uppercase">
                         {" "}
@@ -61,22 +63,29 @@ function HighLights({ highLight, astro }) {
                 </div>
               </div>
             </div>
-            <div className="w-full h-52 bg-black  bg-opacity-25  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
+            <div className="w-full lg:h-52 bg-black  bg-opacity-25  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
               <div className="flex   flex-col  bg-black  bg-opacity-25  rounded-2xl p-1 h-1/2 w-full">
                 <div className="p-2">
-                  <div className="text-xs capitalize font-bold">
+                  <div className="text-xs capitalize font-bold truncate">
                     {" "}
                     sunrise & sunset
                   </div>
                   <div className=" ">
                     <div className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize">
                       <div>
-                        <div className="text-gray-100">sunrise</div>
-                        <div className="text-xs"> {astro.sunrise}</div>
+                        <div className="text-gray-100 text-xs truncate">
+                          sunrise
+                        </div>
+                        <div className="text-xs truncate"> {astro.sunrise}</div>
                       </div>
                       <div className="">
-                        <div className="text-gray-100">sunset</div>
-                        <div> {astro.sunset}</div>
+                        <div className="text-gray-100 text-xs  ml-2 truncate">
+                          sunset
+                        </div>
+                        <div className="text-xs  ml-2 truncate">
+                          {" "}
+                          {astro.sunset}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -84,7 +93,7 @@ function HighLights({ highLight, astro }) {
               </div>
               <div className="  bg-black  bg-opacity-25  rounded-2xl    h-1/2 w-full">
                 <div className="p-2  flex   flex-col  align-middle ">
-                  <div className="text-xs capitalize font-bold">
+                  <div className="text-xs capitalize font-bold truncate">
                     {" "}
                     moonrise & moonset
                   </div>
@@ -92,12 +101,22 @@ function HighLights({ highLight, astro }) {
                   <div className=" ">
                     <div className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize">
                       <div>
-                        <div className="text-gray-100">moonrise</div>
-                        <div className="text-xs"> {astro.moonrise}</div>
+                        <div className="text-gray-100 text-xs truncate">
+                          moonrise
+                        </div>
+                        <div className="text-xs truncate">
+                          {" "}
+                          {astro.moonrise}
+                        </div>
                       </div>
                       <div className="">
-                        <div className="text-gray-100">moonset</div>
-                        <div> {astro.moonset}</div>
+                        <div className="text-gray-100 text-xs ml-2 truncate">
+                          moonset
+                        </div>
+                        <div className="truncate  ml-2 text-xs">
+                          {" "}
+                          {astro.moonset}
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -109,7 +128,7 @@ function HighLights({ highLight, astro }) {
             <div className="w-full h-20 bg-black  bg-opacity-25 rounded-2xl p-2 flex ">
               <div className=" flex flex-col justify-center px-2">
                 <p className="text-xs text-neutral-400">Humidity</p>
-                <p className="text-2xl">
+                <p className="text-md lg:text-2xl">
                   {highLight.humidity}
                   <small className="text-xs text-neutral-400">%</small>
                 </p>
@@ -118,7 +137,7 @@ function HighLights({ highLight, astro }) {
             <div className="w-full h-20 bg-black  bg-opacity-25 rounded-2xl p-2 flex ">
               <div className=" flex flex-col justify-center px-2">
                 <p className="text-xs text-neutral-400 capitalize">feelslike</p>
-                <p className="text-2xl">
+                <p className="text-md lg:text-2xl">
                   {highLight.feelslike.value}°
                   <small className="text-md text-neutral-400">
                     {""}
@@ -132,7 +151,7 @@ function HighLights({ highLight, astro }) {
                 <p className="text-xs text-neutral-400 capitalize">
                   Visibility
                 </p>
-                <p className="text-2xl">
+                <p className="text-md lg:text-2xl">
                   {highLight.visibility.value}
                   <small className="text-xs text-neutral-400 capitalize">
                     {" "}

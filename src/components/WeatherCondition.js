@@ -15,7 +15,7 @@ function WeatherCondition({ weatherData }) {
 
   return (
     <>
-      <div className="    h-96  w-full  rounded-2xl  relative">
+      <div className="    h-96  w-full  rounded-2xl   ">
         <div className="h-16 w-full rounded-2xl flex flex-row justify-between items-center">
           <h1>Weather Condition</h1>
           <div className="bg-neutral-900  rounded-3xl px-2 py-1">
@@ -44,7 +44,7 @@ function WeatherCondition({ weatherData }) {
           </div>
         )} */}
 
-        <div className="  bg-neutral-800 h-80 w-full rounded-2xl  ">
+        <div className="    bg-neutral-800 h-80 w-full rounded-2xl  ">
           <iframe
             width="100%"
             height="100%"

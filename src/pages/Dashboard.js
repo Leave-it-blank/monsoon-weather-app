@@ -5,6 +5,8 @@ import Forcast from "../components/Forcast";
 import WeatherCondition from "../components/WeatherCondition";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import MobNavBar from "../components/MobNavBar";
+
 import DeskNavBar from "../components/DeskNavBar";
 function Dashboard() {
   const { location, current, forecast } = useLoaderData();
@@ -243,6 +245,10 @@ function Dashboard() {
       const astro = `http://api.weatherapi.com/v1/astronomy.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.name},${location.region},${location.country}`;
 
       const resAstro = await fetch(astro);
+      if (!resAstro.ok) {
+        const message = `An error occured: ${resAstro.status} while fetching data from api`;
+        throw new Error(message);
+      }
       const resAstrobody = await resAstro.json();
       setAstro(resAstrobody.astronomy);
     }
@@ -259,7 +265,13 @@ function Dashboard() {
         <DeskNavBar setMetricSystem={setMetricSystem} />
       </div>
       {/* Main web Content */}
-      <div className="w-full     rounded-2xl relative   ">
+      <div
+        className="w-full     rounded-2xl relative   "
+        style={{ minHeight: "49.25rem" }}
+      >
+        <div className="lg:hidden">
+          <MobNavBar setMetricSystem={setMetricSystem} />
+        </div>
         <div className="grid  grid-flow-row gap-5 mx-auto  select-none">
           <div className="min-h-96 w-full">
             <div className="flex flex-col lg:flex-row gap-4  ">
@@ -315,11 +327,11 @@ export async function loader({ params }) {
 
   const res = await fetch(url);
   if (!res.ok) {
-    const message = `An error occured: ${res.status}`;
+    const message = `An error occured: ${res.status} while fetching data from api`;
     throw new Error(message);
   }
-  const resbody = res.json();
 
+  const resbody = res.json();
   return resbody;
 
   //console.log(res);

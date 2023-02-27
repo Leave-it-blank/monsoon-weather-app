@@ -242,7 +242,7 @@ function Dashboard() {
   });
   useEffect(() => {
     async function getData() {
-      const astro = `http://api.weatherapi.com/v1/astronomy.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.name},${location.region},${location.country}`;
+      const astro = `https://api.weatherapi.com/v1/astronomy.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.name},${location.region},${location.country}`;
 
       const resAstro = await fetch(astro);
       if (!resAstro.ok) {
@@ -303,7 +303,7 @@ export default Dashboard;
 
 export async function loader({ params }) {
   let location = params.query;
-  let url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location}&days=14`;
+  let url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location}&days=14`;
   if (location === undefined) {
     function getPosition() {
       // Simple wrapper
@@ -322,7 +322,7 @@ export async function loader({ params }) {
     }
     location = await getPosition();
 
-    url = `http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.coords.latitude},${location.coords.longitude}&days=14`;
+    url = `https://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${location.coords.latitude},${location.coords.longitude}&days=14`;
   }
 
   const res = await fetch(url);

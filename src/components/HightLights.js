@@ -13,7 +13,7 @@ function HighLights({ highLight, astro }) {
                   wind Status
                 </div>
                 <div className=" flex justify-center items-center text-4xl rounded-md h-24 w-full  mt-2">
-                  <div className="p-6 rounded-full bg-neutral-900 bg-opacity-60 drop-shadow-md decoration-purple-400">
+                  <div className="  flex justify-center items-center rounded-full p-4 px-8 bg-black hover:animate-pulse  bg-opacity-20 hover:bg-opacity-40   ">
                     {" "}
                     {highLight.wind_dir}
                   </div>
@@ -64,7 +64,7 @@ function HighLights({ highLight, astro }) {
               </div>
             </div>
             <div className="w-full lg:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
-              <div className="flex   flex-col  bg-black  bg-opacity-60  rounded-2xl p-1 h-1/2 w-full">
+              <div className="flex   flex-col  bg-black  bg-opacity-40  rounded-2xl   h-1/2 w-full py-2 px-3">
                 <div className="p-2">
                   <div className="text-xs capitalize font-bold truncate">
                     {" "}
@@ -91,7 +91,7 @@ function HighLights({ highLight, astro }) {
                   </div>
                 </div>
               </div>
-              <div className="  bg-black  bg-opacity-60  rounded-2xl    h-1/2 w-full">
+              <div className="  bg-black bg-opacity-40  rounded-2xl    h-1/2 w-full py-2 px-3">
                 <div className="p-2  flex   flex-col  align-middle ">
                   <div className="text-xs capitalize font-bold truncate">
                     {" "}

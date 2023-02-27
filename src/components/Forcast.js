@@ -32,7 +32,7 @@ function Forcast({ forecastCard }) {
     <>
       <div className="   h-96   w-full lg:w-3/5 rounded-2xl  ">
         <div className="h-16 w-full rounded-2xl capitalize flex flex-row justify-between items-center">
-          <div className="">forcast</div>
+          <div className="">forecast</div>
           <div className="bg-neutral-900  rounded-3xl px-2 py-1">
             <select
               className="  bg-neutral-900    outline-none"
@@ -46,7 +46,7 @@ function Forcast({ forecastCard }) {
           </div>
         </div>
 
-        <div className="   bg-neutral-800  h-80 w-full rounded-2xl  ">
+        <div className="   bg-neutral-800   h-80 w-full rounded-2xl  ">
           <div
             className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 overflow-y-auto   scroll-hidden scroll-bar-none overscroll-none"
             style={{

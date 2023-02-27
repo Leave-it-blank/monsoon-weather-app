@@ -275,7 +275,7 @@ function Dashboard() {
         <div className="grid  grid-flow-row gap-5 mx-auto  select-none">
           <div className="min-h-96 w-full">
             <div className="flex flex-col lg:flex-row gap-4  ">
-              <div className="   bg-neutral-800 h-96  w-full lg:w-3/5 rounded-2xl  ">
+              <div className="bg-neutral-800  h-96  w-full lg:w-3/5 rounded-2xl  ">
                 <div className="    h-full w-full rounded-2xl  ">
                   <WeatherCard weatherCardData={weatherCard} />
                 </div>

@@ -33,7 +33,7 @@ function MobNavBar({ setMetricSystem }) {
   };
 
   return (
-    <nav className="fixed bottom-5 flex flex-row justify-around items-center translate-x-4   w-4/5 bg-neutral-800 opacity-90 border border-gray-600 rounded-2xl">
+    <nav className="fixed left-1/2 -translate-x-1/2 bottom-5 flex flex-row justify-around items-center    lg:hidden   w-4/5 bg-neutral-800 opacity-90 border border-gray-600 rounded-2xl">
       <div className="flex flex-row justify-center items-center    gap-2 w-full ">
         <div className="    mx-2 opacity-50"></div>
         <ul className="flex   flex-row justify-center items-center mx-auto w-full  text-white gap-4 text-4xl">

@@ -41,7 +41,7 @@ function SearchWeather() {
       </div>
       {/* Main web Content */}
       <div
-        className="w-full      rounded-2xl relative   "
+        className="w-full      rounded-2xl relative   bg-neutral-800 container mx-auto select-none px-3 "
         style={{ height: "49.25rem" }}
       >
         <div className="lg:hidden">
@@ -52,21 +52,19 @@ function SearchWeather() {
           <input
             type="text"
             placeholder="Search for a city"
-            className="w-full lg:w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-700 text-white outline-none p-2"
+            className="w-full lg:w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-900 text-white outline-none p-2"
             onChange={getSuggestions}
           />
           <div className="text-neutral-300 py-2  flex flex-col  w-full lg:w-1/2 ">
             {suggestions.length > 0 &&
               suggestions.map((suggestion, key) => (
-                <div
-                  className="p-2 bg-neutral-800 m-1 rounded-md hover:bg-opacity-70"
-                  key={key}
-                >
+                <Link to={"/city/" + suggestion.url} key={key}>
                   {" "}
-                  <Link to={"/city/" + suggestion.url}>
+                  <div className="p-2 bg-neutral-900 m-1 rounded-md hover:bg-opacity-70">
+                    {" "}
                     {suggestion.name}, {suggestion.region}, {suggestion.country}
-                  </Link>
-                </div>
+                  </div>{" "}
+                </Link>
               ))}
           </div>
         </div>

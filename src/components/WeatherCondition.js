@@ -55,6 +55,7 @@ function WeatherCondition({ weatherData }) {
           ></iframe>
         </div>
       </div>
+      <div className="my-5 lg:hidden"></div>
     </>
   );
 }

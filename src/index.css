@@ -5,3 +5,18 @@
 ::-webkit-scrollbar {
   display: none;
 }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white !important;;
+  opacity: 1; /* Firefox */
+}
+
+.bg_user_background {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#b7deed+0,6398ce+35,1c97bc+71,b7deed+100&0.89+0,0.89+100 */
+/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#398d96+0,124572+33,1d7293+70,7659a5+100 */
+background: #398d96; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #398d96 0%, #124572 33%, #1d7293 70%, #7659a5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #398d96 0%,#124572 33%,#1d7293 70%,#7659a5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #398d96 0%,#124572 33%,#1d7293 70%,#7659a5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#398d96', endColorstr='#7659a5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}

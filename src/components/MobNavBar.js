@@ -33,7 +33,7 @@ function MobNavBar({ setMetricSystem }) {
   };
 
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 bottom-5 flex flex-row justify-around items-center    lg:hidden   w-4/5 bg-neutral-800 opacity-90 border border-gray-600 rounded-2xl">
+    <nav className="fixed left-1/2 -translate-x-1/2 bottom-5 flex flex-row justify-around items-center    lg:hidden   w-4/5 bg_user_background opacity-90 border border-gray-600 rounded-2xl">
       <div className="flex flex-row justify-center items-center    gap-2 w-full ">
         <div className="    mx-2 opacity-50"></div>
         <ul className="flex   flex-row justify-center items-center mx-auto w-full  text-white gap-4 text-4xl">
@@ -45,11 +45,8 @@ function MobNavBar({ setMetricSystem }) {
             rounded-t-xl  
             rounded-b-sm  cursor-pointer
             hover:opacity-100
-            hover:shadow-sm
-            hover:border-b-2 w-full
-            hover:bg-gradient-to-t 
-            hover:from-neutral-900
-            hover:to-transparent
+            transition-transform duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+       
          "
           >
             <Link to="/search">
@@ -66,11 +63,8 @@ function MobNavBar({ setMetricSystem }) {
             rounded-t-xl  
             rounded-b-sm  cursor-pointer
             hover:opacity-100
-            hover:shadow-sm
-            hover:border-b-2 w-full
-            hover:bg-gradient-to-t 
-            hover:from-neutral-900
-            hover:to-transparent
+            transition-transform duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
+       
          "
           >
             {" "}
@@ -87,11 +81,8 @@ function MobNavBar({ setMetricSystem }) {
           rounded-t-xl  
           rounded-b-sm  cursor-pointer
           hover:opacity-100
-          hover:shadow-sm
-          hover:border-b-2 w-full
-          hover:bg-gradient-to-t 
-          hover:from-neutral-900
-          hover:to-transparent
+          hover:animate-spin
+         
          "
           >
             {" "}
@@ -105,7 +96,7 @@ function MobNavBar({ setMetricSystem }) {
       </div>
       <div className="self-center   py-3  pr-5">
         {" "}
-        <div className="bg-neutral-900 p-3  cursor-pointer   rounded-full hover:bg-opacity-80">
+        <div className="bg-neutral-900 hover:animate-pulse  bg-opacity-60 hover:bg-opacity-90 p-3  cursor-pointer   rounded-full  ">
           <button className="font-bold px-2 " onClick={switchSystem}>
             {measure_system_local.unit}
           </button>

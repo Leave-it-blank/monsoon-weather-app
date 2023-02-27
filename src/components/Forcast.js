@@ -33,22 +33,37 @@ function Forcast({ forecastCard }) {
       <div className="   h-96   w-full lg:w-3/5 rounded-2xl  ">
         <div className="h-16 w-full rounded-2xl capitalize flex flex-row justify-between items-center">
           <div className="">forecast</div>
-          <div className="bg-neutral-900  rounded-3xl px-2 py-1">
+          <div className="bg_user_background  rounded-3xl px-2 py-1">
             <select
-              className="  bg-neutral-900    outline-none"
+              className="  bg-inherit    outline-none"
               value={days}
               onChange={setDaysHandle}
             >
-              <option value={valueDate.seven}>7 Days</option>
-              <option value={valueDate.ten}>10 Days</option>
-              <option value={valueDate.fourteen}>14 Days</option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueDate.seven}
+              >
+                7 Days
+              </option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueDate.ten}
+              >
+                10 Days
+              </option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueDate.fourteen}
+              >
+                14 Days
+              </option>
             </select>
           </div>
         </div>
 
-        <div className="   bg-neutral-800   h-80 w-full rounded-2xl  ">
+        <div className="   bg_user_background  h-80 w-full rounded-2xl  ">
           <div
-            className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 overflow-y-auto   scroll-hidden scroll-bar-none overscroll-none"
+            className="    h-full w-full rounded-2xl flex flex-col px-2 py-3 overflow-y-auto   scroll-hidden scroll-bar-none overscroll-auto"
             style={{
               scrollbarWidth: "none",
               msOverflowStyle: "none",
@@ -70,21 +85,21 @@ function Forcast({ forecastCard }) {
                     {item.value.day.max_temp.value}
                     °/{""}
                   </span>
-                  <span className="text-xs text-neutral-400">
+                  <span className="text-xs text-neutral-50 opacity-80">
                     {""}
                     {item.value.day.min_temp.value}
                     {"° "}
                   </span>
-                  <span className="text-xs text-neutral-400">
+                  <span className="text-xs text-neutral-50 opacity-80 ">
                     {" "}
                     {item.value.day.min_temp.unit}{" "}
                   </span>
                 </div>
-                <div className="w-1/5  text-xs text-neutral-400 truncate px-1   py-2">
+                <div className="w-1/5  text-xs text-neutral-50 opacity-80 truncate px-1   py-2">
                   {" "}
                   {moment(item.value.date).format("MMM Do")}
                 </div>
-                <div className="w-1/5  text-xs text-neutral-400 truncate px-1 py-2">
+                <div className="w-1/5  text-xs text-neutral-50 opacity-80 truncate px-1 py-2">
                   {" "}
                   {moment(item.value.date).format("dddd")}
                 </div>

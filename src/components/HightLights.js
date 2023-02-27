@@ -6,14 +6,14 @@ function HighLights({ highLight, astro }) {
         <div> Today's HighLights</div>
         <div className="flex flex-col gap-4  ">
           <div className="grid grid-cols-2 md:grid-cols-3 justify-evenly    mt-2 gap-1 md:gap-3">
-            <div className="w-full h-52 bg-black rounded-2xl p-2 bg-opacity-25">
+            <div className="w-full h-52 bg-black rounded-2xl p-2 bg-opacity-60">
               <div className="flex flex-col mt-2">
                 <div className="text-xs capitalize font-bold ml-2">
                   {" "}
                   wind Status
                 </div>
                 <div className=" flex justify-center items-center text-4xl rounded-md h-24 w-full  mt-2">
-                  <div className="p-6 rounded-full bg-neutral-900 bg-opacity-25 drop-shadow-md decoration-purple-400">
+                  <div className="p-6 rounded-full bg-neutral-900 bg-opacity-60 drop-shadow-md decoration-purple-400">
                     {" "}
                     {highLight.wind_dir}
                   </div>
@@ -37,7 +37,7 @@ function HighLights({ highLight, astro }) {
               </div>
             </div>
 
-            <div className="w-full h-52 bg-black  bg-opacity-25 rounded-2xl p-2">
+            <div className="w-full h-52 bg-black  bg-opacity-60 rounded-2xl p-2">
               <div className="flex flex-col mt-2">
                 <div className="text-xs capitalize font-bold ml-2">
                   {" "}
@@ -63,8 +63,8 @@ function HighLights({ highLight, astro }) {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:h-52 bg-black  bg-opacity-25  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
-              <div className="flex   flex-col  bg-black  bg-opacity-25  rounded-2xl p-1 h-1/2 w-full">
+            <div className="w-full lg:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
+              <div className="flex   flex-col  bg-black  bg-opacity-60  rounded-2xl p-1 h-1/2 w-full">
                 <div className="p-2">
                   <div className="text-xs capitalize font-bold truncate">
                     {" "}
@@ -91,7 +91,7 @@ function HighLights({ highLight, astro }) {
                   </div>
                 </div>
               </div>
-              <div className="  bg-black  bg-opacity-25  rounded-2xl    h-1/2 w-full">
+              <div className="  bg-black  bg-opacity-60  rounded-2xl    h-1/2 w-full">
                 <div className="p-2  flex   flex-col  align-middle ">
                   <div className="text-xs capitalize font-bold truncate">
                     {" "}
@@ -125,18 +125,18 @@ function HighLights({ highLight, astro }) {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-1 md:gap-3">
-            <div className="w-full h-20 bg-black  bg-opacity-25 rounded-2xl p-2 flex ">
+            <div className="w-full h-20 bg-black  bg-opacity-60 rounded-2xl p-2 flex ">
               <div className=" flex flex-col justify-center px-2">
-                <p className="text-xs text-neutral-400">Humidity</p>
+                <p className="text-xs text-neutral-200">Humidity</p>
                 <p className="text-md lg:text-2xl">
                   {highLight.humidity}
                   <small className="text-xs text-neutral-400">%</small>
                 </p>
               </div>
             </div>
-            <div className="w-full h-20 bg-black  bg-opacity-25 rounded-2xl p-2 flex ">
+            <div className="w-full h-20 bg-black  bg-opacity-60 rounded-2xl p-2 flex ">
               <div className=" flex flex-col justify-center px-2">
-                <p className="text-xs text-neutral-400 capitalize">feelslike</p>
+                <p className="text-xs text-neutral-200 capitalize">feelslike</p>
                 <p className="text-md lg:text-2xl">
                   {highLight.feelslike.value}°
                   <small className="text-md text-neutral-400">
@@ -146,9 +146,9 @@ function HighLights({ highLight, astro }) {
                 </p>
               </div>
             </div>
-            <div className="w-full h-20 bg-black  bg-opacity-25 rounded-2xl p-2 flex ">
+            <div className="w-full h-20 bg-black  bg-opacity-60 rounded-2xl p-2 flex ">
               <div className=" flex flex-col justify-center px-2">
-                <p className="text-xs text-neutral-400 capitalize">
+                <p className="text-xs text-neutral-200 capitalize">
                   Visibility
                 </p>
                 <p className="text-md lg:text-2xl">

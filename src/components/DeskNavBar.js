@@ -39,11 +39,11 @@ function DeskNavBar({ setMetricSystem }) {
         <Link
           to=".."
           title="Free Weather checking application"
-          className="px-1 mt-6 rounded-md text-white  cursor-pointer"
+          className="px-1 mt-6 rounded-md    cursor-pointer"
         >
           <img
-            className=" text-white"
-            src="https://imgur.com/VHcGblD.jpeg"
+            className="  rounded-full mx-auto hover:animate-pulse "
+            src="/msa_trans.png"
             alt="Weather data by WeatherAPI.com"
             border="0"
           />
@@ -57,12 +57,8 @@ function DeskNavBar({ setMetricSystem }) {
           opacity-75 
           rounded-r-xl  
           rounded-l-sm
-          hover:opacity-100
-          hover:shadow-sm
-          hover:border-l-2 w-full
-          hover:bg-gradient-to-r  cursor-pointer
-          hover:from-neutral-900
-          hover:to-transparent
+          hover:opacity-100 
+          transition-transform duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
          "
           >
             <Link to="/search">
@@ -78,12 +74,8 @@ function DeskNavBar({ setMetricSystem }) {
           opacity-75 
           rounded-r-xl   cursor-pointer
           rounded-l-sm
-          hover:opacity-100
-          hover:shadow-sm
-          hover:border-l-2 w-full
-          hover:bg-gradient-to-r 
-          hover:from-neutral-900
-          hover:to-transparent
+          hover:opacity-100 
+          transition-transform duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110
          "
           >
             {" "}
@@ -99,12 +91,9 @@ function DeskNavBar({ setMetricSystem }) {
           opacity-75 
           rounded-r-xl  
           rounded-l-sm  cursor-pointer
-          hover:opacity-100
-          hover:shadow-sm
-          hover:border-l-2 w-full
-          hover:bg-gradient-to-r 
-          hover:from-neutral-900
-          hover:to-transparent
+          hover:animate-spin
+          hover:opacity-100 
+          
          "
           >
             {" "}
@@ -118,7 +107,7 @@ function DeskNavBar({ setMetricSystem }) {
       </div>
       <div className="self-center py-5 mb-2">
         {" "}
-        <div className="bg-neutral-900 p-3   cursor-pointer   rounded-full hover:bg-opacity-50">
+        <div className="bg-neutral-900 hover:animate-pulse  bg-opacity-60 hover:bg-opacity-90 p-3   cursor-pointer   rounded-full  ">
           <button className="font-bold px-2 " onClick={switchSystem}>
             {measure_system_local.unit}
           </button>

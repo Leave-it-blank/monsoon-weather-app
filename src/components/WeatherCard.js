@@ -11,7 +11,7 @@ function WeatherCard({ weatherCardData }) {
         <div className="absolute  top-3 right-6">
           <Link
             to="/search"
-            className="font-bold p-3 px-4 rounded-full text-3xl text-white   bg-black bg-opacity-40 hover:bg-neutral-700 "
+            className="font-bold p-4  flex justify-center items-center rounded-full text-3xl text-white bg-neutral-900   bg-opacity-60 hover:bg-opacity-90 hover:animate-pulse"
           >
             <SearchOutlinedIcon fontSize="inherit" />
           </Link>

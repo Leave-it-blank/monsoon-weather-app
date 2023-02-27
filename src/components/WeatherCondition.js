@@ -18,15 +18,30 @@ function WeatherCondition({ weatherData }) {
       <div className="    h-96  w-full  rounded-2xl   ">
         <div className="h-16 w-full rounded-2xl flex flex-row justify-between items-center">
           <h1>Weather Condition</h1>
-          <div className="bg-neutral-900  rounded-3xl px-2 py-1">
+          <div className="bg_user_background  rounded-3xl px-2 py-1">
             <select
-              className="  bg-neutral-900    outline-none"
+              className=" bg-inherit    outline-none"
               value={calendar}
               onChange={handleCalenderChange}
             >
-              <option value={valueCalender.now}>Now</option>
-              <option value={valueCalender.twelve}>12 hr</option>
-              <option value={valueCalender.twentyfour}>24 hr</option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueCalender.now}
+              >
+                Now
+              </option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueCalender.twelve}
+              >
+                12 hr
+              </option>
+              <option
+                className="bg-neutral-900 font-sans"
+                value={valueCalender.twentyfour}
+              >
+                24 hr
+              </option>
             </select>
           </div>
         </div>
@@ -44,7 +59,7 @@ function WeatherCondition({ weatherData }) {
           </div>
         )} */}
 
-        <div className="    bg-neutral-800 h-80 w-full rounded-2xl  ">
+        <div className="    bg_user_background h-80 w-full rounded-2xl  ">
           <iframe
             width="100%"
             height="100%"

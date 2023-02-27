@@ -34,25 +34,25 @@ function SearchWeather() {
       {/* DeskNavBar */}
 
       <div
-        className="lg:w-20  hidden lg:block     rounded-2xl bg-neutral-800 select-none "
+        className="lg:w-20  hidden lg:block     rounded-2xl bg_user_background select-none "
         style={{ height: "49.25rem" }}
       >
         <DeskNavBar setMetricSystem={setMetricSystem} />
       </div>
       {/* Main web Content */}
       <div
-        className="w-full      rounded-2xl relative   bg-neutral-800 container mx-auto select-none px-3 "
+        className="w-full      rounded-2xl relative   bg_user_background container mx-auto select-none px-3 "
         style={{ height: "49.25rem" }}
       >
         <div className="lg:hidden">
           <MobNavBar setMetricSystem={setMetricSystem} />
         </div>
-        <div className=" w-full relative flex justify-center flex-col items-center">
+        <div className=" w-full relative flex justify-center flex-col items-center  text-white">
           <div className="mt-20 invisible"></div>
           <input
             type="text"
             placeholder="Search for a city"
-            className="w-full lg:w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-900 text-white outline-none p-2"
+            className="w-full lg:w-1/2 h-10 rounded-md bg-transparent border-2 border-neutral-900 text-white outline-none p-2 focus:bg-neutral-900   focus:bg-opacity-60 focus:hover:bg-opacity-90"
             onChange={getSuggestions}
           />
           <div className="text-neutral-300 py-2  flex flex-col  w-full lg:w-1/2 ">
@@ -60,7 +60,7 @@ function SearchWeather() {
               suggestions.map((suggestion, key) => (
                 <Link to={"/city/" + suggestion.url} key={key}>
                   {" "}
-                  <div className="p-2 bg-neutral-900 m-1 rounded-md hover:bg-opacity-70">
+                  <div className="p-2 bg-neutral-900   bg-opacity-60 hover:bg-opacity-90 border border-neutral-600 m-1 rounded-md ">
                     {" "}
                     {suggestion.name}, {suggestion.region}, {suggestion.country}
                   </div>{" "}

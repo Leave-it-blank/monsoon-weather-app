@@ -261,7 +261,7 @@ function Dashboard() {
     <>
       {/* DeskNavBar */}
 
-      <div className="lg:w-20  hidden lg:block     rounded-2xl bg-neutral-800 select-none">
+      <div className="lg:w-20  hidden lg:block     rounded-2xl bg_user_background select-none">
         <DeskNavBar setMetricSystem={setMetricSystem} />
       </div>
       {/* Main web Content */}
@@ -274,12 +274,12 @@ function Dashboard() {
         <div className="grid  grid-flow-row gap-5 mx-auto  select-none">
           <div className="min-h-96 w-full">
             <div className="flex flex-col lg:flex-row gap-4  ">
-              <div className="bg-neutral-800  h-96  w-full lg:w-3/5 rounded-2xl  ">
+              <div className="bg_user_background h-96  w-full lg:w-3/5 rounded-2xl  ">
                 <div className="    h-full w-full rounded-2xl  ">
                   <WeatherCard weatherCardData={weatherCard} />
                 </div>
               </div>
-              <div className="   bg-neutral-800 md:h-96  w-full  rounded-2xl  ">
+              <div className="   bg_user_background md:h-96  w-full  rounded-2xl  ">
                 <div className="    h-full w-full rounded-2xl  ">
                   <HighLights highLight={highLight} astro={astro} />
                 </div>

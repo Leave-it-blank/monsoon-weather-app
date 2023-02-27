@@ -10,15 +10,34 @@ function RootLayout() {
   }
   return (
     <>
-      <main className="  bg-black  text-white  min-h-screen font-mono">
+      <main className="  bg-black bg-opacity-95  text-white  min-h-screen font-mono">
         <div className="       text-white mx-auto py-8 lg:p-10    ">
-          <div className="    rounded-md  ">
-            <h1 className="lg:hidden font-bold font-mono pl-3 pb-5 text-2xl">
-              {" "}
-              MonSoon Weather App
-            </h1>
+          <div className=" relative    rounded-md  ">
+            <div className="flex justify-between items-baseline px-3 lg:hidden ">
+              <h1 className=" font-bold font-mono  pb-5 text-2xl">
+                {" "}
+                MonSoon Weather App
+              </h1>
+              <h3 className="text-neutral-400 text-xs">
+                Powered by{" "}
+                <a
+                  href="https://www.weatherapi.com/"
+                  title="Free Weather API"
+                  className="text-neutral-300 hover:text-neutral-100"
+                >
+                  WeatherAPI.com
+                </a>
+              </h3>
+            </div>
+
             <div className="flex flex-col md:flex-row gap-10 relative    mx-2">
               <Outlet />
+            </div>
+            <div className="absolute hidden lg:block lg:-bottom-10 right-5 text-xs">
+              Powered by{" "}
+              <a href="https://www.weatherapi.com/" title="Free Weather API">
+                WeatherAPI.com
+              </a>
             </div>
           </div>
         </div>

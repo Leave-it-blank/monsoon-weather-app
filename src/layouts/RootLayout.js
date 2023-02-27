@@ -19,6 +19,7 @@ function RootLayout() {
             </h1>
             <div className="flex flex-col md:flex-row gap-10 relative">
               <Outlet />
+              <div className="my-5"></div>
             </div>
           </div>
         </div>

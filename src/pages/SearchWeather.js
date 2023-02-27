@@ -8,7 +8,7 @@ function SearchWeather() {
   const [metricSystem, setMetricSystem] = useState(
     JSON.parse(localStorage["metricSystem"])
   );
-  //http://api.weatherapi.com/v1/search.json?key= &q="banda"
+  //https://api.weatherapi.com/v1/search.json?key= &q="banda"
   const [searchData, setSearchData] = useState("L");
   const getSuggestions = (e) => {
     const query = e.target.value;
@@ -18,7 +18,7 @@ function SearchWeather() {
   useEffect(() => {
     function getActualSuggestions() {
       if (searchData.length < 1) return;
-      const url = `http://api.weatherapi.com/v1/search.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchData}`;
+      const url = `https://api.weatherapi.com/v1/search.json?key=${process.env.REACT_APP_WEATHER_API_KEY}&q=${searchData}`;
       fetch(url)
         .then((res) => res.json())
         .then((data) => {

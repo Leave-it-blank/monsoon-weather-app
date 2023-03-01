@@ -63,7 +63,7 @@ function HighLights({ highLight, astro }) {
                 </div>
               </div>
             </div>
-            <div className="w-full lg:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex flex-col justify-center items-center gap-2">
+            <div className="w-full hidden   md:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 md:flex flex-col justify-center items-center gap-2">
               <div className="flex   flex-col  bg-black  bg-opacity-40  rounded-2xl   h-1/2 w-full py-2 px-3">
                 <div className="p-2">
                   <div className="text-xs capitalize font-bold truncate">
@@ -71,7 +71,10 @@ function HighLights({ highLight, astro }) {
                     sunrise & sunset
                   </div>
                   <div className=" ">
-                    <div className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize">
+                    <div
+                      className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize overflow-scroll
+                  "
+                    >
                       <div>
                         <div className="text-gray-100 text-xs truncate">
                           sunrise
@@ -99,7 +102,7 @@ function HighLights({ highLight, astro }) {
                   </div>
 
                   <div className=" ">
-                    <div className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize">
+                    <div className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 overflow-scroll select-none capitalize">
                       <div>
                         <div className="text-gray-100 text-xs truncate">
                           moonrise
@@ -117,6 +120,66 @@ function HighLights({ highLight, astro }) {
                           {" "}
                           {astro.moonset}
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full  h-40  md:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex md:hidden flex-col justify-center items-center gap-2">
+              <div className="flex   flex-col     rounded-2xl   h-full justify-between w-full p-3 ">
+                <div className="text-xs capitalize font-bold truncate">
+                  {" "}
+                  Moonrise & Moonset
+                </div>
+                <div className=" ">
+                  <div
+                    className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize overflow-scroll
+                  "
+                  >
+                    <div>
+                      <div className="text-gray-100 text-xs truncate">
+                        Sunrise
+                      </div>
+                      <div className="text-xs truncate"> {astro.sunrise}</div>
+                    </div>
+                    <div className="">
+                      <div className="text-gray-100 text-xs  ml-2 truncate">
+                        Sunset
+                      </div>
+                      <div className="text-xs  ml-2 truncate">
+                        {" "}
+                        {astro.sunset}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="w-full  h-40  md:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex md:hidden flex-col justify-center items-center gap-2">
+              <div className="flex   flex-col     rounded-2xl   h-full justify-between w-full p-3 ">
+                <div className="text-xs capitalize font-bold truncate">
+                  {" "}
+                  Moonrise & Moonset
+                </div>
+                <div className=" ">
+                  <div
+                    className="flex flex-row py-3 text-xs  justify-between   text-neutral-400 select-none capitalize overflow-scroll
+                  "
+                  >
+                    <div>
+                      <div className="text-gray-100 text-xs truncate">
+                        Moonrise
+                      </div>
+                      <div className="text-xs truncate"> {astro.moonrise}</div>
+                    </div>
+                    <div className="">
+                      <div className="text-gray-100 text-xs  ml-2 truncate">
+                        Moonset
+                      </div>
+                      <div className="text-xs  ml-2 truncate">
+                        {" "}
+                        {astro.moonset}
                       </div>
                     </div>
                   </div>

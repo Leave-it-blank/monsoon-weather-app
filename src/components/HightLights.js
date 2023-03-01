@@ -128,9 +128,9 @@ function HighLights({ highLight, astro }) {
             </div>
             <div className="w-full  h-40  md:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex md:hidden flex-col justify-center items-center gap-2">
               <div className="flex   flex-col     rounded-2xl   h-full justify-between w-full p-3 ">
-                <div className="text-xs capitalize font-bold truncate">
+                <div className="text-xs capitalize font-bold overflow-scroll">
                   {" "}
-                  Moonrise & Moonset
+                  Sunrise & SunSet
                 </div>
                 <div className=" ">
                   <div
@@ -157,8 +157,8 @@ function HighLights({ highLight, astro }) {
               </div>
             </div>
             <div className="w-full  h-40  md:h-52 bg-black  bg-opacity-60  rounded-2xl p-3 flex md:hidden flex-col justify-center items-center gap-2">
-              <div className="flex   flex-col     rounded-2xl   h-full justify-between w-full p-3 ">
-                <div className="text-xs capitalize font-bold truncate">
+              <div className="flex   flex-col     rounded-2xl   h-full justify-between w-full p-3   ">
+                <div className="text-xs capitalize font-bold overflow-scroll">
                   {" "}
                   Moonrise & Moonset
                 </div>

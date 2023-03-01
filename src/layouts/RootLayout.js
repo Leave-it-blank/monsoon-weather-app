@@ -18,7 +18,7 @@ function RootLayout() {
                 {" "}
                 MonSoon Weather App
               </h1>
-              <h3 className="text-neutral-400 text-xs">
+              <h3 className="text-neutral-400 text-xs text-end">
                 Powered by{" "}
                 <a
                   href="https://www.weatherapi.com/"
@@ -33,9 +33,13 @@ function RootLayout() {
             <div className="flex flex-col md:flex-row gap-10 relative    mx-2">
               <Outlet />
             </div>
-            <div className="absolute hidden lg:block lg:-bottom-10 right-5 text-xs">
+            <div className="absolute hidden lg:block lg:-bottom-10 right-5 text-xs text-neutral-400">
               Powered by{" "}
-              <a href="https://www.weatherapi.com/" title="Free Weather API">
+              <a
+                href="https://www.weatherapi.com/"
+                title="Free Weather API"
+                className="text-neutral-300 hover:text-neutral-100"
+              >
                 WeatherAPI.com
               </a>
             </div>
